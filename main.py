@@ -22,19 +22,19 @@ def readTexts(image: str):
 
 
 image_dir = "./pictures/"
-codeList: list[str] = []
+codeSet: set[str] = set()
 pattern = re.compile("[a-zA-Z]{1,}[- ]{0,}[0-9]{1,}")
 
 for image in get_image_files(image_dir):
     for text in readTexts(image):
         match = pattern.search(str(text))
         if match:
-            codeList.append(match.group())
+            codeSet.add(match.group())
 
-print("match code is", codeList)
+print("match code is", codeSet)
 
 with open("codelist.txt", "w") as file:
-    for code in codeList:
+    for code in codeSet:
         file.write(code)
         file.write("\n")
 
