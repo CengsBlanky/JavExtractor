@@ -38,4 +38,4 @@ with open("codelist.txt", "w") as file:
         file.write(code)
         file.write("\n")
 
-print("code write to codelist done!")
+print("code write to codelist.txt done!")
