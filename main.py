@@ -23,7 +23,7 @@ def readTexts(image: str):
 
 image_dir = "./pictures/"
 codeSet: set[str] = set()
-pattern = re.compile("[a-zA-Z]{1,}[- ]{0,}[0-9]{1,}")
+pattern = re.compile("[a-zA-Z]{3,}[- ]{0,}[0-9]{2,}")
 
 for image in get_image_files(image_dir):
     for text in readTexts(image):
